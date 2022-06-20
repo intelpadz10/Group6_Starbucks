@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Varela Round", sans-serif;
+  background-color: black;
+  padding: 0%;
+  margin: 0%;
+}
+
+/* .navBar {
+  margin: 20px;
+  display: flex;
+  position: sticky;
+  align-items: center;
+  justify-content: left;
+  top: 0px;
+} */
+
+.navBar {
+  position: relative;
+
+  margin: 20px;
+  display: flex;
+  position: sticky;
+  align-items: center;
+  justify-content: left;
+  top: 0px;
+}
+
+h5 {
+  padding: 10px;
+  margin-top: 10px;
+  text-align: center;
+  color: white;
+  font-family: "Varela Round", sans-serif;
+  margin-right: 50px;
+}
+
+h1.customer {
+  font-size: 30px;
+  color: #dcebe5;
+  font-weight: 650;
+  align-items: center;
+  padding-left: 10px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+  padding: 10px;
+}
+
+h2 {
+  color: white;
+}

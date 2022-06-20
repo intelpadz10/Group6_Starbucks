@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+.background1 {
+  background-image: url("assets/bg1.jpg");
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.background2 {
+  background-color: white;
+  width: 450px;
+  height: 600px;
+  margin: auto;
+  margin-top: 5%;
+  padding: 30px;
+  display: block;
+  text-align: center;
+  border-radius: 20px;
+  opacity: 85%;
+  position: center;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 30px;
+  margin-top: 10px;
+  text-align: center;
+  color: rgb(40, 125, 40);
+  font-family: "Varela Round", sans-serif;
+}
+
+form {
+  margin-top: 100px;
+}
+
+input {
+  border-radius: 20px;
+  border-color: rgb(40, 125, 40);
+  padding: 2px;
+  text-align: center;
+  width: 50%;
+  height: 30px;
+  font-size: 15px;
+}
+
+label {
+  font-size: 20px;
+  font-family: "Varela Round", sans-serif;
+}
+
+button {
+  width: 25%;
+  height: 30px;
+  border-radius: 5px;
+  border-style: none;
+  font-size: 15px;
+  padding: 3px;
+  background-color: rgb(40, 125, 40);
+  color: whitesmoke;
+}
+
+button:hover {
+  background-color: rgb(155, 198, 155);
+  color: black;
+  cursor: pointer;
+}
