@@ -8,7 +8,7 @@ Session::start();
 
 //Session::remove('orderList');
 $customerName = $_SESSION['customerName'];
-$CustomerOrderList = new OrderList();
+// $CustomerOrderList = new OrderList();
 
 if ($_REQUEST) {
     if (isset($_REQUEST['delete'])) {
@@ -36,75 +36,57 @@ if ($_REQUEST) {
 </head>
 <body>
     <div class = "navBar">
-        <img src="assets/logo.png" alt="Starbutts Logo" style="width: 60px; height: 60px;">
-        <h5>Starbucks Philippines</h5> <br>
-        <li><a href="launcher.php">Home</a></li>
-        <li><a href="orderPage.php">Cart</a></li>
+        <img src="assets/logo.png" alt="Starbutts Logo" style="width: 120px; height: 120px; margin-left: 50px; margin-right: 50px; margin-top: 10px">
+        <h2>Starbucks Philippines</h2> <br>
+        <li><a href="orderPage.php">Menu</a></li>
+        <li><a href="cartPage.php">Cart</a></li>
+        <li><a href="launcher.php">Sign out</a></li>
     </div>
 
-    <h1 class= "customer">Good Day, <?php echo $customerName; ?>!. What would you like to have today?</h1>
+    <h1>Good Day, <?php echo $customerName; ?>! Want some coffee and snacks?</h1>
 
     <form action=<?php echo $_SERVER[
         'PHP_SELF'
     ]; ?> method="post" id="itemForm">
-        <h2>Food & Beverages</h2>
-        <select name="consumable" id="consumable">
-            <option value="placeholder" selected>   Select type of consumable   </option>
-        </select>
 
-        <hr>
+    <h3 id="h3">Menu</h3>
+    <div class="beverages">
+        <h4>Beverages</h4>
+            <select name="consumable" id="consumable">
+                <option value="placeholder" selected>Choose your beverage</option>
+            </select>
+    </div>
 
-        <h2>Menu</h2>
-        <div id="menu">
-        </div>
-        
-        <button type="submit" name="addOrder" style="margin-top: 2em;">Add To Your Order</button>
-        <?php if ($_REQUEST) {
-            if (isset($_REQUEST['addOrder'])) {
-                if (
-                    isset($_REQUEST['menuItem']) &&
-                    $_REQUEST['selection'] != 'placeholder'
-                ) {
-                    $itemData = explode('.', $_REQUEST['menuItem']);
-                    $CustomerOrderList->addOrder(
-                        $itemData[0],
-                        floatval($itemData[1]),
-                        $itemData[2],
-                        $_REQUEST['option']
-                    );
-                }
+    <div class = "images">
+        <img src="assets/bg1.jpg" alt="bg1" style="width: 50px; height: 50px;">
+    </div>
+    
+
+    <div class="food">
+        <h4>Food</h4>
+            <select name="consumable" id="consumable">
+                <option value="placeholder" selected>Select food</option>
+            </select>
+    </div>
+    
+    <button type="submit">Add To Your Cart</button>
+
+    <?php if ($_REQUEST) {
+        if (isset($_REQUEST['addOrder'])) {
+            if (
+                isset($_REQUEST['menuItem']) &&
+                $_REQUEST['selection'] != 'placeholder'
+            ) {
+                $itemData = explode('.', $_REQUEST['menuItem']);
+                $CustomerOrderList->addOrder(
+                    $itemData[0],
+                    floatval($itemData[1]),
+                    $itemData[2],
+                    $_REQUEST['option']
+                );
             }
-        } ?>
-
-        <hr>
-        <div class="container">
-        <h2 class="yourOrders">Your Orders</h2>
-        <div id="orders">
-            <?php if ($_REQUEST) {
-                foreach ($_SESSION['orderList'] as $key => $order) {
-                    echo '<label style = "padding-right: 2em; text-align: right; font-size: 16px;">' .
-                        $order->getName() .
-                        '   ₱' .
-                        $order->getPrice() .
-                        '</label>';
-                    echo '<button type="submit" name="delete" value="' .
-                        $key .
-                        '" style = "padding: 5px; font-size: 7px; height: 20px; width: 20px;
-                        margin-top: 1.5em;">x</button><br>';
-                }
-            } ?>
-        </div>
-        <button type="submit" name="placeOrder" style="margin-top: 2em;">Place your Order</button>
-        
-        <?php if ($_REQUEST) {
-            if (isset($_REQUEST['placeOrder'])) {
-                if (!empty($_SESSION['orderList'])) {
-                    header('Location: receipt.php');
-                } else {
-                    echo '<br><p style="font-size:12px; color: #939393; font-weight: 450; padding-top:1em;">Please select an item<p>';
-                }
-            }
-        } ?>
+        }
+    } ?>
     </form>
         </div>
 </body>

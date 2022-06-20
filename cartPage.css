@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* body */
+body {
+  font-family: "Varela Round", sans-serif;
+  background-color: black;
+  padding: 0%;
+  margin: 0%;
+}
+
+/* divs */
+.navBar {
+  margin: 20px;
+  display: flex;
+  position: sticky;
+  align-items: center;
+  justify-content: left;
+  top: 0px;
+}
+
+/* list */
+a {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+a:hover {
+  color: green;
+}
+
+li {
+  list-style: none;
+  padding: 10px;
+}
+
+/* header texts */
+h2 {
+  padding: 10px;
+  margin-top: 10px;
+  text-align: center;
+  color: white;
+  font-family: "Varela Round", sans-serif;
+  margin-right: 50%;
+}
